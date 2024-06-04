@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@900&display=swap");
+* {
+    font-family: "LXGW WenKai Mono TC", monospace;
+    font-weight: 800;
+    font-style: italic;
+  }
+  
+
+/* class就用.，id就用# */
+.container-intro{
+    background: rgb(0, 0, 0);
+    padding: 50px;
+    color: white;
+    font-size:30px;
+}
+
+.text1{
+    font-size: 30px;
+    text-align: center;
+    color: transparent; /* 文字顏色設定透明 */
+    background: rgb(255, 255, 255);
+    -webkit-background-clip: text; /* 背景裁剪成文字的前景色 */
+    background-clip: text;
+
+}
+.text2{
+    font-size: 100px;
+    text-align: center;
+    color: transparent; /* 文字顏色設定透明 */
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(33,33,106,1) 0%, rgba(255,0,0,1) 0%, rgba(255,155,0,1) 16%, rgba(242,255,0,1) 32%, rgba(6,255,0,1) 48%, rgba(0,232,255,1) 64%, rgba(0,12,255,1) 80%, rgba(210,0,255,1) 100%);
+    -webkit-background-clip: text; /* 背景裁剪成文字的前景色 */
+    background-clip: text;
+
+}
+.pic{
+    width: 200px;
+    height: 200px;
+    border: 3px solid white;    
+    border-radius: 50%;
+    padding: 0px;
+    background: rgb(255, 255, 255);
+
+
+}
