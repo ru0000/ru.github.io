@@ -1,0 +1,215 @@
+@charset "UTF-8";
+/* 全体の設定 */
+html {
+  scroll-behavior: smooth;
+}
+
+body, td, th {
+  font-size: 14px;
+  color: var(--main);
+  font-weight: normal;
+  line-height: 1.6em;
+  margin: 0px;
+  padding: 0px;
+  background-color: var(--bg0);
+}
+
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.small {
+  font-size: 8px;
+  line-height: 1.6em;
+}
+
+/* リスト設定  */
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+ul ul {
+  margin: 0 15px;
+}
+
+ul, ol {
+  list-style-position: inside;
+}
+
+/* 画像のボーダーをあらかじめ０にする */
+img {
+  max-width: 100%;
+  border: none;
+}
+
+/* フォーム関連の設定 */
+textarea {
+  font-size: 11px;
+  line-height: 17px;
+  padding: 5px;
+  color: var(--sub);
+  border: 1px solid var(--border1);
+  background-color: var(--bg0);
+}
+
+textarea::-webkit-input-placeholder {
+  color: var(--border3);
+}
+
+textarea:-ms-input-placeholder {
+  color: var(--border3);
+}
+
+textarea::-ms-input-placeholder {
+  color: var(--border3);
+}
+
+textarea::placeholder {
+  color: var(--border3);
+}
+
+input {
+  color: var(--sub);
+  border: 1px solid var(--border1);
+  background-color: var(--bg0);
+}
+
+input::-webkit-input-placeholder {
+  color: var(--border3);
+}
+
+input:-ms-input-placeholder {
+  color: var(--border3);
+}
+
+input::-ms-input-placeholder {
+  color: var(--border3);
+}
+
+input::placeholder {
+  color: var(--border3);
+}
+
+/* ヘッダー */
+header {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 60px 5px;
+}
+
+/* フッター */
+footer {
+  font-size: 8px;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+@media screen and (min-width: 540px) {
+  .wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 900px;
+    margin: 0px auto;
+  }
+  .navi {
+    width: 220px;
+    padding: 5px;
+  }
+  .contents {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  /* メニュー部分の設定 */
+  .menu {
+    text-align: left;
+    list-style: none;
+    line-height: 1.6em;
+    width: 100%;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 2px;
+  }
+  .menu li {
+    margin: 5px 0;
+  }
+  .menu li a {
+    display: block;
+  }
+  .menu li a:hover {
+    display: block;
+  }
+  .sub li a {
+    display: block;
+    padding: 0;
+  }
+  .sub li a:hover {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .navi {
+    width: 100%;
+    margin: 0 auto 10px;
+  }
+  .contents {
+    width: 99%;
+    margin: 0 auto;
+  }
+  /* メニュー部分の設定 */
+  .menu {
+    text-align: left;
+    list-style: none;
+    line-height: 1.6em;
+    margin: 0 auto;
+  }
+  .menu li {
+    width: 98%;
+    border: 2px solid var(--border2);
+    display: inline-block;
+  }
+  .menu li a {
+    display: block;
+  }
+  ul.sub {
+    margin: 0;
+    padding: 0;
+  }
+  ul.sub li {
+    width: 48%;
+  }
+  .sub li a {
+    text-align: left;
+    padding: 0;
+  }
+  .sub li a:hover {
+    padding: 0;
+  }
+}
+
+/* テキスト設定 */
+.text {
+  padding: 5px 10px;
+}
+/*# sourceMappingURL=layout.css.map */

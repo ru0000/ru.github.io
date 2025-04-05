@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>シナリオタイトル</title>
+    <link rel="stylesheet" href="./assets/css/common.css">
+    <link rel="stylesheet" href="./assets/css/layout.css">
+    <link rel="stylesheet" href="./assets/css/parts.css">
+    <script src="./assets/js/parts.js"></script>
+  </head>
+  <!-- ふりがな前後の()が不要な場合、「oncopy="rubyToggle(false)"」に変更 -->
+  <body oncopy="rubyToggle()" onload="countText()">
+    <header>
+      <div class="title">シナリオタイトル<br></div>
+      (本文：<span id="countResult"></span>)
+    </header>
+    <div class="wrap">
+
+    <div class="navi">
+      <ul class="menu">
+
+        <!-- コピペ時ふりがなON/OFFパーツ：ここから -->
+        <div class="toggle_button">
+          <input id="toggle" class="toggle_input" type='checkbox'>
+          <label for="toggle" class="toggle_label">
+            <span></span>
+          </label>
+        </div>
+        <!-- コピペ時ふりがなON/OFFパーツ：ここまで -->
+      
+        <li><a href="#pl">PL情報</a></li>
+        <li><a href="#kp">KP情報</a></li>
+      <details>
+        <summary>
+          シナリオ本文
+        </summary>
+        <li><a href="#op">導入</a></li>
+        <details>
+          <summary>
+          1日目
+          </summary>
+          <li><a href="#1">図書館</a></li>
+          <li><a href="#2">駅前</a></li>
+        </details>
+        <details>
+          <summary>
+          2日目
+          </summary>
+          <li><a href="#3">朝イベント</a></li>
+          <li><a href="#4">本拠地</a></li>
+          <ul class="sub">
+          <li><a href="#4-1">・1F</a></li>
+          <li><a href="#4-2">・地下</a></li>
+          </ul>
+        </details>
+        <li><a href="#ed">エンディング</a></li>
+        <li><a href="#clear">クリア報酬</a></li>
+      </details>
+      <li><a href="#agreement">利用規約</a></li>
+      </ul>
+    </div><!-- class:navi -->
+
+    <div class="contents" id="contents">
+      <div class="text" id="countTextarea">
+
+        <span id="change"></span>
+        <!-- 単語置換パーツ：ここから -->
+        <form name="change">
+        単語1<input name="name0" type="text" value="" placeholder="{PC苗字}"><br> 
+        単語2<input name="name1" type="text" value="" placeholder="{PC名前}"><br> 
+        <br> 
+        単語3<input name="name2" type="text" value="" placeholder="{NPC苗字}"><br> 
+        単語4<input name="name3" type="text" value="" placeholder="{NPC名前}"><br> 
+        <br>
+        <input type="button" value="置換" onclick="changeWord()"> 
+        <input type="button" value="リセット" onclick="pageReload()">
+        </form>
+        <!-- 単語置換パーツ：ここまで -->
+        <br>
+        <br>
+
+       <h1 id="pl">PL情報</h1>
+       <table class="overview">
+        <tr>
+          <th>システム</th>
+          <td>クトゥルフ神話TRPG第6版</td>
+        </tr>
+        <tr>
+          <th>タイトル</th>
+          <td>シナリオタイトル</td>
+        </tr>
+        <tr>
+          <th>プレイ人数</th>
+          <td>1～4名</td>
+        </tr>
+        <tr>
+          <th>プレイ時間</th>
+          <td>6～8時間</td>
+        </tr>
+        <tr>
+          <th>傾向</th>
+          <td>現代舞台、島クローズド</td>
+        </tr>
+        <tr>
+          <th>推奨技能</th>
+          <td>≪目星≫≪聞き耳≫≪図書館≫≪オカルト≫</td>
+        </tr>
+      </table>
+
+       <h2>シナリオ概要</h2>
+       {PC苗字}{PC名前}の自宅に届いた招待状。<br>
+       それは、知人のフルート奏者の誕生パーティー開催を知らせるものだった。<br>
+       そうして{NPC苗字}{NPC名前}とともに訪れた孤島の洋館は、台風の来訪で外界と閉ざされることとなる。<br>
+       <br>
+       探偵、隠し財産の噂に、島に伝わるわらべ歌。<br>
+       何も起きないはずもなく。<br>
+       果たして、聴こえた不気味なフルートの音色が<ruby><rb>誘</rb><rt>いざな</rt></ruby>う先は……。<br>
+       <br>
+       という感じで使えます。<br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+
+       <br>
+       <h1 id="kp">KP情報</h1>
+       本文はこのように表示されます。<br>
+       その他装飾は以下の通りです。<br>
+       <br>
+       <ul>
+        <li>リスト</li>
+        <li>リスト</li>
+        <li>リスト</li>
+       </ul>
+       <br>
+       <a href="#1">テキストリンク</a><br>
+       <br>
+       <h1>見出しh1</h1>
+       <h2>見出しh2</h2>
+       <h3>見出しh3</h3>
+       <h4>見出しh4</h4>
+       <br>
+      装飾ボックス　カラーバリエーション3種
+      <div class="box1">注釈・描写など</div>
+      <div class="box2">注釈・描写など</div>
+      <div class="box3">注釈・描写など</div>
+      <details>
+        <summary>
+          追加装飾例
+        </summary>
+        <div class="box1 tg">class「tg」追加で「KP情報」タグつきに</div>
+        <div class="box2 rd">class「rd」追加で角丸に</div>
+       </details>
+
+       <br>
+       <div class="history">
+        更新履歴<br>
+        ▽XXXX/XX/XX up
+        </div>
+       <br>
+       <br>
+       <br>
+       <br>
+
+       <h2>機能類紹介</h2>
+       各機能の使用方法補足、既存のHTMLにパーツのみ使用したい場合は以下ページをご参照ください。<br>
+       <a href="https://github.com/jxsnwk/templates_001/wiki" target="_blank">https://github.com/jxsnwk/templates_001/wiki</a><br>
+       <br>
+       <br>
+       <h3>(1)文字カウント</h3>
+       <a href="#">シナリオタイトル下「(本文：約〇〇字)」の部分</a>は、100単位四捨五入でふんわり自動カウントしています。<br>
+
+       <br>
+       <br>
+
+       <h3>(2)コピペ時ふりがなON/OFF</h3>
+        コピー＆ペースト時に、ふりがなをつけた状態で貼り付けるかどうかを選べます。<br>
+        左上のボタンでON/OFFが切り替えられます。デフォルトはOFFです。<br>
+        以下サンプルテキストのコピペで挙動をご確認いただけます。<br>
+        <br>
+        サンプルテキスト<br>
+        <div class="box1">
+        「ではみなさんは、そういうふうに川だと<ruby><rb>云</rb><rt>い</rt></ruby>われたり、乳の流れたあとだと云われたりしていたこのぼんやりと白いものがほんとうは何かご承知ですか。」<br>
+        先生は、黒板に<ruby><rb>吊</rb><rt>つる</rt></ruby>した大きな黒い星座の図の、上から下へ白くけぶった銀河帯のようなところを<ruby><rb>指</rb><rt>さ</rt></ruby>しながら、みんなに<ruby><rb>問</rb><rt>とい</rt></ruby>をかけました。<br>
+        </div>
+        <a href="https://www.aozora.gr.jp/cards/000081/files/456_15050.html" target="_blank">宮沢賢治作「銀河鉄道の夜」　青空文庫より引用</a><br>
+        <br>
+        <textarea name="example" placeholder="貼り付け動作確認用。ここに貼り付けられます。" cols="46" rows="6"></textarea>
+        <details>
+          <summary>
+            貼り付け時サンプル
+          </summary>
+          OFF選択時想定値<br>
+          <div class="box2">
+          「ではみなさんは、そういうふうに川だと云われたり、乳の流れたあとだと云われたりしていたこのぼんやりと白いものがほんとうは何かご承知ですか。」<br>
+          先生は、黒板に吊した大きな黒い星座の図の、上から下へ白くけぶった銀河帯のようなところを指しながら、みんなに問をかけました。
+          </div>
+          <br>
+          ON選択時想定値<br>
+          <div class="box2">
+          「ではみなさんは、そういうふうに川だと云(い)われたり、乳の流れたあとだと云われたりしていたこのぼんやりと白いものがほんとうは何かご承知ですか。」<br>
+          先生は、黒板に吊(つる)した大きな黒い星座の図の、上から下へ白くけぶった銀河帯のようなところを指(さ)しながら、みんなに問(とい)をかけました。
+          </div>
+          <br>
+          <br>
+        </details>
+
+        <details>
+          <summary>
+            調整例
+          </summary>
+          デフォルトでは、ふりがなの前後に「(」「)」が表示されます。<br>
+          表示しない場合、「oncopy="rubyToggle()"」の引数に「false」を追記します。<br>
+          <div class="box1">
+            &lt;body oncopy="rubyToggle(<b>false</b>)" onload="countText()"&gt;
+          </div>
+          <br>
+          ふりがなON選択 & false時の想定値
+          <div class="box2">
+          「ではみなさんは、そういうふうに川だと云いわれたり、乳の流れたあとだと云われたりしていたこのぼんやりと白いものがほんとうは何かご承知ですか。」<br>
+          先生は、黒板に吊つるした大きな黒い星座の図の、上から下へ白くけぶった銀河帯のようなところを指さしながら、みんなに問といをかけました。
+          </div>
+          <br>
+          <br>
+        </details>
+
+      
+        <br>
+        <br>
+
+        <h3>(3)ライセンス表示</h3>
+        CSS側で定型文を設定しているため、タグを貼るだけで以下のような文言表示が反映できます。
+        <!-- ライセンス表示パーツ：ここから -->
+        <div class="licence"></div>
+        <!-- ライセンス表示パーツ：ここまで -->
+        <br>
+
+        <h3>(4)単語置換</h3>
+        単語置換機能です。文中に使用されている置換対象の単語を一括置換します。<br>
+        <a href="#change">こちらの入力フォーム</a>から、HTML内単語を置換できます。<br>
+        <br>
+        置換箇所の特別な指定などは不要です。（その代わり、同じ単語で置換する/しないは区別ができません。全て置換されます）<br>
+        JavaScript側の調整も不要、HTML側の調整のみで置換語句を設定できます。<br>
+        <details>
+          <summary>
+            調整例
+          </summary>
+          <div class="box1 small">
+            &lt;!-- 単語置換パーツ：ここから --&gt;<br>
+            &lt;form name=&quot;change&quot;&gt;<br>
+            単語1&lt;input name=&quot;name0&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;{PC苗字}&quot;&gt;&lt;br&gt; <br>
+            単語2&lt;input name=&quot;name1&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;{PC名前}&quot;&gt;&lt;br&gt; <br>
+            &lt;br&gt; <br>
+            単語3&lt;input name=&quot;name2&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;<b>①デフォルト置換単語</b>&quot;&gt;&lt;br&gt; <br>
+            <s>単語4&lt;input name=&quot;name3&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;{NPC名前}&quot;&gt;&lt;br&gt; </s><b>②減らす場合</b><br>
+            単語5&lt;input name=&quot;<b>③増やす場合</b>&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;{NPC一人称}&quot;&gt;&lt;br&gt; <br>
+            &lt;br&gt;<br>
+            &lt;input type=&quot;button&quot; value=&quot;置換&quot; onclick=&quot;changeWord()&quot;&gt; <br>
+            &lt;input type=&quot;button&quot; value=&quot;リセット&quot; onclick=&quot;pageReload()&quot;&gt;<br>
+            &lt;/form&gt;<br>
+            &lt;!-- 単語置換パーツ：ここまで --&gt;<br>
+          </div>
+          ①デフォルト置換単語<br>
+          「placeholder=""」部分にデフォルトの置換対象単語を設定して使用してください。<br><br>
+          ②減らす場合<br>
+          置換する単語の種類を減らす場合は、input行を丸ごと削ればOKです。<br><br>
+          ③増やす場合<br>
+          置換する単語の種類を増やす（=input行を増やす）場合は、他のinputの「name=""」と被らない値を設定してください。name4みたいなのが無難ですが、適当につけても動くかと思います。<br>
+          <br>
+
+
+        </details>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <h1 id="agreement">利用規約</h1>
+        これはTRPGのシナリオ配布用HTML形式テンプレートです。<br>
+        クトゥルフ神話TRPGシナリオでの使用を想定していますが、用語等を変更することで他のシステムにもご利用いただけます。<br>
+        それ以外の用途にも、以下「NG 禁止事項」に反しない限り、ご利用いただけます。<br>
+        <br>
+        本テンプレートは、HTML形式のシナリオ配布がもっとお気軽にできるようになるといいなあ、の考えのもと作られています。<br>
+        （使用時には、ツール使用でHTML形式に変換してテンプレに流し込むとかすると楽だと思います。）<br>
+        <br>
+        プログラム知識の少ない人間の作った拙いものですので、色々とお目こぼしいただけますと幸いです。<br>
+        <br>
+        以下のサンプルサイトで挙動をご確認いただけます。<br>
+        <a href="https://jxsnwk.github.io/templates_001/" target="_blank">https://jxsnwk.github.io/templates_001/</a><br>
+        <br>
+        <br>
+        質問や不明点はTwitter：<a href="https://twitter.com/Jxsn_wk" target="_blank">@Jxsn_wk</a>までお問い合わせください。<br>
+        <br>
+        <br>
+        <br>
+        <h4>NG 禁止事項</h4>
+        <div class="box1">
+          <ul>
+            <li>本テンプレートの自作発言</li>
+            <li>頒布ファイルそのままの形での再配布（無償/有償問わず）</li>
+            <li>法律に違反することに関連した利用</li>
+          </ul>
+        </div>
+        <br>
+        <br>
+        <br>
+
+        <h4>OK 許可していること</h4>
+        <div class="box1">
+          <strong>購入不要、無料利用可能</strong>
+          <ul>
+            <li>本テンプレートを利用した【シナリオ】の公開及び頒布</li>
+            <ul>
+              <li>無償/有償問わず</li>
+              <li>改変した場合を含む</li>
+              <li>既存のHTMLファイルに一部利用した場合を含む</li>
+            </ul>
+          </ul>
+        </div>
+        <br>
+        <div class="box1">
+          <strong>「テンプレート配布用」の購入が必要</strong>
+          <ul>
+            <li>本テンプレートを改変・部分利用した【テンプレート】の公開及び配布</li>
+            <ul>
+              <li>無償/有償問わず</li>
+              <li>改変・一部利用の程度の大小を問わず</li>
+            </ul>
+          </ul>
+        </div>
+        <br>
+        <br>
+        <br>
+
+        <h4>"Template by Jaxson"の削除について</h4>
+        <div class="box1">
+          ページ下部footer内の"Template by Jaxson"表示は、
+          <ul>
+            <li>【シナリオ】の公開及び頒布の場合、削除してもよい</li>
+            <li>【テンプレート】の公開及び配布の場合、以下の条件を満たしていれば削除してもよい</li>
+             <ul>
+               <li>配布物内(READMEなど)に本テンプレートの配布元URLが記載されていること</li>
+             </ul>
+             <div class="box3 rd small">
+              記載例）<br>
+              改変元テンプレート：<br>
+              https://jxsn-wk.booth.pm/items/4385648<br>
+             </div>
+          </ul>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="history">
+        ▽2022/12/11 up<br>
+        ▽2024/07/28 CSS・JS調整
+        </div>
+        </div><!-- class:text -->
+
+      </div><!-- class:contents -->
+    </div><!-- class:wrap -->
+    <footer class="center">Template by <a href="https://jxsn-wk.booth.pm/items/4385648" target="_blank">Jaxson</a></footer>
+    <div id="page_top"><a href="#"></a></div>
+  </body>
+</html>
+   
